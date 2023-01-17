@@ -16,7 +16,7 @@ def test_main_1():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*F[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*F[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -33,7 +33,7 @@ def test_main_2():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*D[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*D[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -50,7 +50,7 @@ def test_main_3():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*C[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*C[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -67,7 +67,7 @@ def test_main_4():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*B[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*B[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -84,6 +84,6 @@ def test_main_5():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*A[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*A[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
