@@ -10,15 +10,17 @@ def test_main_1():
     datastr = '50'
     sys.stdin = io.StringIO(datastr)
 
-    main.main()
+    ret = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search(r'[\w,\W]*F[\w,\W]*', lines[0])
-    assert res != None
-    print(res.group())
+    assert ret == 'F'
+
+    # res = re.search(r'[\w,\W]*F[\w,\W]*', lines[0])
+    # assert res != None
+    # print(res.group())
 
 
 def test_main_2():
@@ -27,15 +29,13 @@ def test_main_2():
     datastr = '65'
     sys.stdin = io.StringIO(datastr)
 
-    main.main()
+    ret = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search(r'[\w,\W]*D[\w,\W]*', lines[0])
-    assert res != None
-    print(res.group())
+    assert ret == 'D'
 
 
 def test_main_3():
@@ -44,15 +44,13 @@ def test_main_3():
     datastr = '75'
     sys.stdin = io.StringIO(datastr)
 
-    main.main()
+    ret = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search(r'[\w,\W]*C[\w,\W]*', lines[0])
-    assert res != None
-    print(res.group())
+    assert ret == 'C'
 
 
 def test_main_4():
@@ -61,15 +59,13 @@ def test_main_4():
     datastr = '85'
     sys.stdin = io.StringIO(datastr)
 
-    main.main()
+    ret = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search(r'[\w,\W]*B[\w,\W]*', lines[0])
-    assert res != None
-    print(res.group())
+    assert ret == 'B'
 
 
 def test_main_5():
@@ -78,12 +74,10 @@ def test_main_5():
     datastr = '90'
     sys.stdin = io.StringIO(datastr)
 
-    main.main()
+    ret = main.main()
     sys.stdout = sys.__stdout__
     print('Captured ', captureOut.getvalue())
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search(r'[\w,\W]*A[\w,\W]*', lines[0])
-    assert res != None
-    print(res.group())
+    assert ret == 'A'
